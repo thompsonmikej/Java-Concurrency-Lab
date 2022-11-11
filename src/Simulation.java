@@ -8,7 +8,11 @@ public class Simulation {
             @Override
             public void run() {
                 for (int i = 0; i < 10; i++) {
-                    myAccount.withdraw(100);
+                    try {
+                        myAccount.withdraw(100);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         };

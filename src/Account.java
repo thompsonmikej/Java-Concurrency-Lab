@@ -29,9 +29,10 @@ private int amountWithdrawn;
     }
 
     //Method (can do)
-    public void withdraw(int amount){
+    public void withdraw(int amount) throws InterruptedException {
         String threadName = Thread.currentThread().getName();
         if (amount <= this.balance){
+            Thread.sleep(100);
             //if true, then subtract this amount from the balance
             this.balance -= amount;
             this.amountWithdrawn += amount;
